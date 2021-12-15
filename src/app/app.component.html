@@ -1,0 +1,11 @@
+<router-outlet></router-outlet>
+
+<div *ngFor="let course of courses$ | async">
+  <h3>{{course.name}}</h3>
+  <details>
+    <summary>Show course</summary>
+    <pre>
+      {{extractCourseFromJSON(course)}}
+    </pre>
+  </details>
+</div>

@@ -1,0 +1,44 @@
+<div>
+	<h1>Course:</h1>
+	<div class="input-field">
+		<label for="name">Name:</label>
+		<input type="text" name="name" id="name" [(ngModel)]="course.name" (ngModelChange)="updateCourse()">
+	</div>
+	<h1>Author:</h1>
+	<div class="input-row">
+		<div class="input-field">
+			<label for="author.firstName">First name:</label>
+			<input type="text" name="author.firstName" id="author.firstName" [(ngModel)]="course.author.firstName" (ngModelChange)="updateCourse()">
+		</div>
+		<div class="input-field">
+			<label for="author.lastName">Last name:</label>
+			<input type="text" name="author.lastName" id="author.lastName" [(ngModel)]="course.author.lastName" (ngModelChange)="updateCourse()">
+		</div>
+	</div>
+	<h1>Contents:</h1>
+	<div>
+		<app-editor-course-contents [contents]="course.contents"></app-editor-course-contents>
+	</div>
+	<h1>Plans:</h1>
+	<div>
+		<app-editor-course-plans [plans]="course.plans" (updateCourseEvent)="updateCourse()"></app-editor-course-plans>
+	</div>
+	<h1>Duration:</h1>
+	<div class="input-row">
+		<input name="duration.value" type="number" [(ngModel)]="course.duration.value" (ngModelChange)="updateCourse()">
+		<select name="duration.unit" id="duration.unit" [(ngModel)]="course.duration.unit" (ngModelChange)="updateCourse()">
+			<option *ngFor="let unit of durationUnit | keyvalue" [ngValue]="unit.key">{{unit.value}}</option>
+		</select>
+	</div>
+	<h1>Sales:</h1>
+	<div class="input-row">
+		<div class="input-field">
+			<label for="sales.start">Start:</label>
+			<input type="date" name="sales.start" id="sales.start" [ngModel]="course.sales.start | date:'yyyy-MM-dd'" (ngModelChange)="course.sales.start = parseDate($event); updateCourse()" min="{{this.currentDate | date:'yyyy-MM-dd'}}">
+		</div>
+		<div class="input-field">
+			<label for="sales.end">End:</label>
+			<input type="date" name="sales.end" id="sales.end" [ngModel]="course.sales.end | date:'yyyy-MM-dd'" (ngModelChange)="course.sales.end = parseDate($event); updateCourse()" min="{{course.sales.start | date:'yyyy-MM-dd'}}">
+		</div>
+	</div>
+</div>

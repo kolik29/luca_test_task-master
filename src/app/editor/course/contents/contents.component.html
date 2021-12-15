@@ -1,0 +1,36 @@
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+	</tr>
+	<tr *ngFor="let content of contents; let i = index">
+		<td width="50%">
+			<input type="text" name="content.name" id="content.name" [(ngModel)]="content.name">
+		</td>
+		<td width="50%">
+			<select name="content.type" id="content.type" [(ngModel)]="content.type">
+				<option *ngFor="let contentItemType of contentsItemType | keyvalue" [ngValue]="contentItemType.value">{{contentItemType.key}}</option>
+			</select>
+		</td>
+		<td>
+			<button (click)="remove(i)">
+				Remove
+			</button>
+		</td>
+	</tr>
+	<tr>
+		<td width="50%">
+			<input type="text" name="content.name" id="content.name" [(ngModel)]="newContentsItem.name">
+		</td>
+		<td width="50%">
+			<select name="content.type" id="content.type" [(ngModel)]="newContentsItem.type">
+				<option *ngFor="let contentItemType of contentsItemType | keyvalue" [ngValue]="contentItemType.value">{{contentItemType.key}}</option>
+			</select>
+		</td>
+		<td>
+			<button (click)="add()">
+				Add
+			</button>
+		</td>
+	</tr>
+</table>
