@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <th>
+            Available:
+        </th>
+        <th>
+            Title:
+        </th>
+    </tr>
+    <tr *ngFor="let advantage of advantages; let i = index;">
+        <td>
+            <input type="checkbox" [(ngModel)]="advantage.available">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="advantage.title">
+        </td>
+        <td>
+            <button (click)="remove(i)">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" [(ngModel)]="newAdvantage.available">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="newAdvantage.title">
+        </td>
+        <td>
+            <button (click)="add()">+</button>
+        </td>
+    </tr>
+</table>

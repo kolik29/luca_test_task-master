@@ -45,6 +45,37 @@ export class DataService {
         end: new Date(2021, 11, 25, 7, 35),
       },
     });
+    this.createCourse({
+      name: "Test course #2",
+      author: {
+        firstName: "John",
+        lastName: "Doe"
+      },
+      contents: [
+        { name: "test lesson", type: ContentsItemType.lesson },
+      ],
+      plans: [
+        {
+          name: "Free test",
+          price: 100,
+          advantages: [
+            {
+              available: true,
+              title: "First Advantage"
+            },
+            {
+              available: false,
+              title: "Second advantage"
+            },
+          ],
+        },
+      ],
+      duration: { value: 1, unit: DurationUnit.day },
+      sales: {
+        start: new Date(2021, 9, 24, 12, 20),
+        end: new Date(2021, 11, 25, 7, 35),
+      },
+    });
   }
 
   private _courses: Map<string, Course> = new Map();

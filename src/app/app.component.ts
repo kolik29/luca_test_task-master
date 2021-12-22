@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './services/data/data.service';
+import { Location } from '@angular/common'; 
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,16 @@ import { DataService } from './services/data/data.service';
 })
 export class AppComponent {
   constructor(
-    private readonly dataService:DataService
-  ) {}
+    private readonly dataService:DataService,
+    private location: Location
+  ) {
+    dataService.courses$.subscribe(() => {
+      console.log('test')
+    })
+  }
   courses$ = this.dataService.courses$;
 
+  changeUrl(url: string): void {
+    this.location.go(url);
+  }
 }

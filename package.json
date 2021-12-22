@@ -35,5 +35,17 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
-  }
+  },
+  "description": "Необходимо сделать форму для редактирования данных курса с **автосохранением**, используя метод `DataService.updateCourse()`.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolik29/luca_test_task-master.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kolik29/luca_test_task-master/issues"
+  },
+  "homepage": "https://github.com/kolik29/luca_test_task-master#readme"
 }

@@ -1,0 +1,40 @@
+<table>
+    <tr>
+        <th>
+            Name:
+        </th>
+        <th>
+            Price:
+        </th>
+        <th>
+            Advantages:
+        </th>
+    </tr>
+    <tr *ngFor="let plan of plans; let i = index">
+        <td>
+            <input type="text" [(ngModel)]="plan.name">
+        </td>
+        <td>
+            <input type="number" [(ngModel)]="plan.price">
+        </td>
+        <td>
+            <app-editor-advantages [advantages]="plan.advantages"></app-editor-advantages>
+        </td>
+        <td>
+            <button (click)="remove(i)">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="newPlan.name">
+        </td>
+        <td>
+            <input type="number" [(ngModel)]="newPlan.price">
+        </td>
+        <td>
+        </td>
+        <td>
+            <button (click)="add()">+</button>
+        </td>
+    </tr>
+</table>

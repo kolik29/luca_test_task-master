@@ -1,0 +1,56 @@
+<div>
+    <div>
+        <h3>Name</h3>
+        <label>
+            <input type="text" [(ngModel)]="course.name">
+        </label>
+    </div>
+    
+    <!-- <div>
+        <h3>Author</h3>
+        <label>
+            First name:
+            <input type="text" [(ngModel)]="course.author.firstName">
+        </label>
+        <label>
+            Last name:
+            <input type="text" [(ngModel)]="course.author.lastName">
+        </label>
+    </div>
+
+    <div>
+        <h3>Contents</h3>
+        <app-editor-contents [contents]="course.contents"></app-editor-contents>
+    </div>
+
+    <div>
+        <h3>Duration</h3>
+        <label>
+            Value:
+            <input type="number" [(ngModel)]="course.duration.value">
+        </label>
+        <label>
+            Unit:
+            <select [(ngModel)]="course.duration.unit">
+                <option *ngFor="let unit of durationUnits | keyvalue" value="{{unit.key}}">{{unit.value}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div>
+        <h3>Plans</h3>
+        <app-editor-plans [plans]="course.plans"></app-editor-plans>
+    </div>
+
+    <div>
+        <h3>Sales</h3>
+        <label>
+            Start:
+            <input type="date" [ngModel]="course.sales.start | date:'yyyy-MM-dd'" (ngModelChange)="course.sales.start = $event" min="{{currentDate | date:'yyyy-MM-dd'}}">
+        </label>
+        <label>
+            End:
+            <input type="date" [ngModel]="course.sales.end | date:'yyyy-MM-dd'" (ngModelChange)="course.sales.end = $event" min="{{course.sales.start | date:'yyyy-MM-dd'}}">
+        </label>
+    </div> -->
+</div>
